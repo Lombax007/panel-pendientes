@@ -18,4 +18,17 @@ export const FEATURES = {
    * Apagado: las vencidas solo aparecen en Avisos (como en el Figma).
    */
   grupoVencidas: true,
+
+  /**
+   * Pantalla /comparativo: "Antes" (campanita de un LMS genérico, recreada)
+   * contra "Después" (el tablero). Solo se llega por liga directa.
+   * Apagado: /comparativo redirige al tablero.
+   */
+  comparativo: true,
+
+  /**
+   * Control de tiempo simulado (+3 h, +1 día, +1 semana, Volver al presente).
+   * Solo aparece si la liga trae `?demo=1`. Apagado: no aparece nunca.
+   */
+  modoDemoTiempo: true,
 } as const;

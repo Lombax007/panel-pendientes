@@ -7,12 +7,12 @@ const TABS = [
   { to: '/avisos', label: 'Avisos', Icon: BellIcon, end: false },
 ];
 
-/** Barra inferior fija: Inicio, Cursos, Avisos. */
-export function BottomNav() {
+/** Barra inferior fija: Inicio, Cursos, Avisos. `inline` = sin fijar (para el comparativo). */
+export function BottomNav({ inline = false }: { inline?: boolean }) {
   return (
     <nav
       aria-label="Navegación principal"
-      className="fixed inset-x-0 bottom-0 z-20 mx-auto max-w-[480px] border-t border-[#d1d5db] bg-chrome pb-[env(safe-area-inset-bottom)]"
+      className={`${inline ? 'sticky w-full' : 'fixed'} inset-x-0 bottom-0 z-20 mx-auto max-w-[480px] border-t border-[#d1d5db] bg-chrome pb-[env(safe-area-inset-bottom)]`}
     >
       <ul className="flex">
         {TABS.map(({ to, label, Icon, end }) => (

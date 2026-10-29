@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "capturas": "node scripts/capturas.mjs",
-    "prueba:recarga": "node scripts/prueba-recarga.mjs"
+    "prueba:recarga": "node scripts/prueba-recarga.mjs",
+    "capturas:demo": "node scripts/capturas-demo.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

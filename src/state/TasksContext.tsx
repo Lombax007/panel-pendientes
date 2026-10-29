@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { buildSampleTasks } from '../data/tasks';
 import { applySaved, loadSaved, storeSaved, type Saved } from '../lib/persistence';
 import type { Reminders, Task } from '../lib/types';
-import { currentTime, useNow } from './useNow';
+import { currentTime, useTime } from './TimeContext';
 
 type Ctx = {
   tasks: Task[];
@@ -16,7 +16,7 @@ type Ctx = {
 const TasksContext = createContext<Ctx | null>(null);
 
 export function TasksProvider({ children }: { children: ReactNode }) {
-  const now = useNow();
+  const { now } = useTime();
   // Las fechas se calculan una vez al abrir la app, relativas a ese momento.
   const [base] = useState(() => buildSampleTasks(currentTime()));
   const [saved, setSaved] = useState<Saved>(loadSaved);
